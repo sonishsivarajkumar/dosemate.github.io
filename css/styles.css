@@ -1,0 +1,142 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #4D4D4D;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header */
+header {
+  background-color: #FFFFFF;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #2C6975;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+
+.cta-button {
+  background-color: #FFFFFF;
+  color: #2C6975;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 600;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+/* Features Section */
+#features {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.feature-item {
+  max-width: 300px;
+}
+
+.feature-item img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+/* How It Works Section */
+#how-it-works {
+  background-color: #F9F9F9;
+  padding: 60px 20px;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-item {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.step-number {
+  background-color: #2C6975;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #2C6975;
+  color: #FFFFFF;
+  padding: 20px;
+}
+
+.footer-container {
+  text-align: center;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  color: #FFFFFF;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .features-container, .steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Active Link Styling */
+.active {
+  font-weight: bold;
+}

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>DoseMate | Breaking Language Barriers in Healthcare Technology</title>
+    <meta name="description" content="DoseMate - Revolutionizing medication management through AI-powered translation and smart reminders. Breaking language barriers in healthcare technology.">
+    <meta name="keywords" content="medication management, prescription translation, healthcare technology, medical translations, medication reminders, drug identification, healthcare AI">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="DoseMate - Breaking Language Barriers in Healthcare">
+    <meta property="og:description" content="AI-powered medication management solution for seamless prescription translation and tracking.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dosemate.app">
+    <meta property="og:image" content="https://dosemate.app/assets/logo-color.jpg">
+    
+    <!-- Additional SEO Tags -->
+    <link rel="canonical" href="https://dosemate.app">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo-color copy.png">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <!-- Custom CSS -->
+    <style>
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.hidden {
+            transform: translateX(-100%);
+        }
+        
+        /* Custom Gradient Background */
+        .hero-gradient {
+            background: linear-gradient(135deg, #2C6975 0%, #68B2A0 100%);
+        }
+        
+        /* Hover Effects */
+        .feature-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        /* Loading Animation */
+        .loading {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-50 hidden">
+        <div class="bg-white w-64 h-full py-4 px-6">
+            <div class="flex justify-between items-center mb-8">
+                <img src="assets/logo.svg" alt="DoseMate Logo" class="h-8">
+                <button onclick="toggleMobileMenu()" class="text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav class="space-y-4">
+                <a href="#about" class="block text-gray-600 hover:text-[#2C6975]">About</a>
+                <a href="#product" class="block text-gray-600 hover:text-[#2C6975]">Product</a>
+                <a href="#technology" class="block text-gray-600 hover:text-[#2C6975]">Technology</a>
+                <a href="#careers" class="block text-gray-600 hover:text-[#2C6975]">Careers</a>
+                <a href="#contact" class="block text-gray-600 hover:text-[#2C6975]">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-40">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center">
+                    <img src="assets/logo-color copy.png" alt="DoseMate Logo" class="h-10">
+                    <span class="ml-2 text-2xl font-bold text-[#2C6975]">DoseMate</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-[#2C6975] transition">About</a>
+                    <a href="#product" class="text-gray-600 hover:text-[#2C6975] transition">Product</a>
+                    <a href="#technology" class="text-gray-600 hover:text-[#2C6975] transition">Technology</a>
+                    <a href="#careers" class="text-gray-600 hover:text-[#2C6975] transition">Careers</a>
+                    <a href="#contact" class="text-gray-600 hover:text-[#2C6975] transition">Contact</a>
+                </div>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-28 pb-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-white" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                        Breaking Language Barriers in Healthcare
+                    </h1>
+                    <p class="text-xl mb-8">
+                        DoseMate empowers everyone to understand and manage their medications, regardless of language differences.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#2C6975] transition">
+                            Watch Demo
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#2C6975] transition">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0" data-aos="fade-left">
+                    <img src="assets/logo-color.png" alt="DoseMate App Interface" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Features Overview -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">
+            Transforming Medication Management
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Feature 1: Prescription Translation -->
+            <div class="feature-card bg-gray-50 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-language text-[#2C6975] text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Prescription Translation</h3>
+                <p class="text-gray-600">
+                    Instant translation of prescriptions in 50+ languages with support for various image formats.
+                </p>
+            </div>
+
+            <!-- Feature 2: Smart Reminders -->
+            <div class="feature-card bg-gray-50 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-bell text-[#2C6975] text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Smart Reminders</h3>
+                <p class="text-gray-600">
+                    Intelligent medication scheduling with customizable reminders and tracking.
+                </p>
+            </div>
+
+            <!-- Feature 3: Drug Identifier -->
+            <div class="feature-card bg-gray-50 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-pills text-[#2C6975] text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Drug Identifier</h3>
+                <p class="text-gray-600">
+                    AI-powered medication identification with interaction checking capabilities.
+                </p>
+            </div>
+
+            <!-- Feature 4: DoseMate Assistant -->
+            <div class="feature-card bg-gray-50 p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-comments text-[#2C6975] text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">DoseMate Assistant</h3>
+                <p class="text-gray-600">
+                    24/7 multilingual AI chatbot for instant medication support.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800" data-aos="fade-up">Our Story</h2>
+                <p class="text-gray-600" data-aos="fade-up" data-aos-delay="100">
+                    Founded in 2024, DoseMate emerged from a simple yet powerful vision: making medication management accessible to everyone, regardless of language barriers. Our team of healthcare professionals and technology experts came together to create an innovative solution that combines advanced AI with user-friendly design.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-bold mb-4 text-[#2C6975]">Mission</h3>
+                    <p class="text-gray-600">
+                        To eliminate language barriers in healthcare and empower everyone to manage their medications safely and effectively.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-xl font-bold mb-4 text-[#2C6975]">Vision</h3>
+                    <p class="text-gray-600">
+                        To become the global standard for multilingual medication management, making healthcare more accessible worldwide.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="text-xl font-bold mb-4 text-[#2C6975]">Values</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Innovation in Healthcare</li>
+                        <li>• Patient Safety First</li>
+                        <li>• Global Accessibility</li>
+                        <li>• Technology Excellence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">
+                Our Technology
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8" data-aos="fade-right">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-[#2C6975]">Advanced AI Platform</h3>
+                        <p class="text-gray-600">
+                            Our proprietary AI technology combines computer vision, natural language processing, and machine learning to deliver accurate prescription translations and medication identification.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-[#2C6975]">Security First</h3>
+                        <p class="text-gray-600">
+                            HIPAA-compliant infrastructure with end-to-end encryption ensures your medical data stays private and secure.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-[#2C6975]">Continuous Learning</h3>
+                        <p class="text-gray-600">
+                            Our AI systems continuously improve through machine learning while maintaining strict privacy standards and user anonymity.
+                        </p>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <img src="assets/images/technology.png" alt="DoseMate Technology Platform" class="rounded-lg shadow-xl">
+                    <div class="absolute top-0 right-0 bg-[#2C6975] text-white px-4 py-2 rounded-tr-lg rounded-bl-lg">
+                        AI Powered
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="Join" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800" data-aos="fade-up">Join Our Mission</h2>
+                <p class="text-gray-600 mb-8" data-aos="fade-up" data-aos-delay="100">
+                    We're looking for passionate individuals who want to revolutionize healthcare technology and make a real difference in people's lives.
+                </p>
+            </div>
+            
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Get in Touch</h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md" data-aos="fade-right">
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="name">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-[#2C6975]">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="email">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-[#2C6975]">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="subject">Subject</label>
+                                <select id="subject" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-[#2C6975]">
+                                    <option>General Inquiry</option>
+                                    <option>Partnership Opportunity</option>
+                                    <option>Career Information</option>
+                                    <option>Press & Media</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="message">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-[#2C6975]"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-[#2C6975] text-white py-3 rounded-lg font-semibold hover:bg-teal-700 transition">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md" data-aos="fade-left">
+                        <h3 class="text-xl font-bold mb-6 text-[#2C6975]">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 mt-1 mr-3">📍</div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Address</h4>
+                                    <p class="text-gray-600">3810 Forbes Ave<br>Pittsburgh, PA 15213</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 mt-1 mr-3">📧</div>
+                                <div>
+                                    <h4 class="font-semibold mb-1">Email</h4>
+                                    <p class="text-gray-600">contact@dosemate.app</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-6 h-6 mt-1 mr-3">📱</div>
+                                <!-- <div>
+                                    <h4 class="font-semibold mb-1">Phone</h4>
+                                    <p class="text-gray-600">+1 (555) 123-4567</p>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <h4 class="font-semibold mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-600 hover:text-[#2C6975]">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-[#2C6975]">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>
+                                </a>
+                                <a href="#" class="text-gray-600 hover:text-[#2C6975]">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2 md:col-span-1">
+                    <img src="assets/logo-no-background.svg" alt="DoseMate Logo" class="h-8 mb-4">
+                    <p class="text-gray-400">Breaking language barriers in medication management.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#careers" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">HIPAA Compliance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Stay updated with our latest news and updates.</p>
+                    <form class="space-y-4"></form>
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white border-none focus:outline-none focus:ring-2 focus:ring-[#2C6975]">
+                        <button type="submit" class="w-full bg-[#2C6975] text-white py-2 rounded-lg hover:bg-teal-700 transition">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 DoseMate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate on Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Form Submission Handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            console.log('Form submitted');
+        });
+
+        // Scroll to Top Button Visibility
+        window.addEventListener('scroll', function() {
+            const scrollToTop = document.querySelector('.scroll-to-top');
+            if (scrollToTop) {
+                if (window.pageYOffset > 100) {
+                    scrollToTop.classList.remove('hidden');
+                } else {
+                    scrollToTop.classList.add('hidden');
+                }
+            }
+        });
+
+        // Lazy Loading for Images
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = document.querySelectorAll('img[data-src]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(img) {
+                    imageObserver.observe(img);
+                });
+            }
+        });
+    </script>
+
+    <!-- Schema.org Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DoseMate",
+        "description": "AI-powered medication management solution breaking language barriers in healthcare",
+        "url": "https://dosemate.app",
+        "logo": "https://dosemate.app/assets/logo-no-background.svg",
+        "sameAs": [
+            "https://linkedin.com/company/DoseMate"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "3810 Forbes Ave",
+            "addressLocality": "Pittsburgh",
+            "addressRegion": "PA",
+            "postalCode": "15213",
+            "addressCountry": "US"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "contact@dosemate.app"
+        }
+    }
+    </script>
+</body>
+</html>
